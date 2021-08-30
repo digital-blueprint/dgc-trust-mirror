@@ -1,1 +1,0 @@
-# dgc-trust-mirror
