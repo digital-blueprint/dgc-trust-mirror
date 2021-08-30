@@ -1,0 +1,41 @@
+name: main
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * *"
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  update:
+    permissions:
+      contents: write
+    runs-on: ubuntu-20.04
+    name: update-mirror
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y \
+            curl
+
+      - name: Download
+        run: |
+          mkdir -p dir
+          curl --fail "https://dgc-trust.qr.gv.at/trustlist" -o dir/trustlist
+          curl --fail "https://dgc-trust.qr.gv.at/trustlistsig" -o dir/trustlistsig
+          curl --fail "https://dgc-trust.qr.gv.at/rules" -o dir/rules
+          curl --fail "https://dgc-trust.qr.gv.at/rulessig" -o dir/rulessig
+          curl --fail "https://dgc-trust.qr.gv.at/valuesets" -o dir/valuesets
+          curl --fail "https://dgc-trust.qr.gv.at/valuesetssig" -o dir/valuesetssig
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dir
+          publish_branch: main
