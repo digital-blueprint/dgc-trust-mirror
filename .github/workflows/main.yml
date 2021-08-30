@@ -32,6 +32,7 @@ jobs:
           curl --fail "https://dgc-trust.qr.gv.at/rulessig" -o dir/rulessig
           curl --fail "https://dgc-trust.qr.gv.at/valuesets" -o dir/valuesets
           curl --fail "https://dgc-trust.qr.gv.at/valuesetssig" -o dir/valuesetssig
+          cp README.md ./dir
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
