@@ -31,14 +31,14 @@ jobs:
           curl --fail "https://dgc-trust.qr.gv.at/rules" -o dir/prod/rules || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/prod/rules -o dir/prod/rules
           curl --fail "https://dgc-trust.qr.gv.at/rulessig" -o dir/prod/rulessig || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/prod/rulessig -o dir/prod/rulessig
           curl --fail "https://dgc-trust.qr.gv.at/valuesets" -o dir/prod/valuesets || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/prod/valuesets -o dir/prod/valuesets
-          curl --fail "https://dgc-trust.qr.gv.at/valuesetssig" -o dir/prod/valuesetssig || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/prod/valuesets -o dir/prod/valuesets
+          curl --fail "https://dgc-trust.qr.gv.at/valuesetssig" -o dir/prod/valuesetssig || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/prod/valuesetssig -o dir/prod/valuesetssig
           mkdir -p dir/test
           curl --fail "https://dgc-trusttest.qr.gv.at/trustlist" -o dir/test/trustlist || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/test/trustlist -o dir/test/trustlist
           curl --fail "https://dgc-trusttest.qr.gv.at/trustlistsig" -o dir/test/trustlistsig || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/test/trustlistsig -o dir/test/trustlistsig
           curl --fail "https://dgc-trusttest.qr.gv.at/rules" -o dir/test/rules || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/test/rules -o dir/test/rules
           curl --fail "https://dgc-trusttest.qr.gv.at/rulessig" -o dir/test/rulessig || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/test/rulessig -o dir/test/rulessig
           curl --fail "https://dgc-trusttest.qr.gv.at/valuesets" -o dir/test/valuesets || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/test/valuesets -o dir/test/valuesets
-          curl --fail "https://dgc-trusttest.qr.gv.at/valuesetssig" -o dir/test/valuesetssig || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/test/valuesets -o dir/test/valuesets
+          curl --fail "https://dgc-trusttest.qr.gv.at/valuesetssig" -o dir/test/valuesetssig || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/test/valuesetssig -o dir/test/valuesetssig
           cp README.md ./dir
           cp index.html ./dir
 
