@@ -41,6 +41,7 @@ jobs:
           curl --fail "https://dgc-trusttest.qr.gv.at/valuesetssig" -o dir/test/valuesetssig || curl --fail https://digital-blueprint.github.io/dgc-trust-mirror/test/valuesetssig -o dir/test/valuesetssig
           cp README.md ./dir
           cp index.html ./dir
+          cp .gitattributes ./dir
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
