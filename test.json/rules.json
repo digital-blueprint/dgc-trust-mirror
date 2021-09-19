@@ -546,10 +546,6 @@
         },
         {
             "i": "VR-UA-0003",
-            "r": "{\"Identifier\":\"VR-UA-0003\",\"Type\":\"Acceptance\",\"Country\":\"UA\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Verification Datetime must be more than 0 days and less than 180 days after the last date of vaccination.\"},{\"lang\":\"ua\",\"desc\":\"Verification Datetime має бути більше 0 днів і менше 180 днів після дати останньої дати вакцинації.\"}],\"ValidFrom\":\"2021-08-03T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},180,\"day\"]}]},true]}}"
-        },
-        {
-            "i": "VR-UA-0003",
             "r": "{\"Identifier\":\"VR-UA-0003\",\"Type\":\"Acceptance\",\"Country\":\"UA\",\"Version\":\"1.1.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Verification Datetime must be more than 0 days and less than 365 days after the last date of vaccination.\"},{\"lang\":\"ua\",\"desc\":\"Verification Datetime має бути більше 0 днів і менше 365 днів після дати останньої дати вакцинації.\"}],\"ValidFrom\":\"2021-09-19T12:36:36Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},365,\"day\"]}]},true]}}"
         },
         {
