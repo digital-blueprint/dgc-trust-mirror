@@ -849,6 +849,26 @@
             "r": "{\"Identifier\":\"VR-AT-0009\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine <> Johnson) & (sequencenumber < total number of doses) -> false (keine Vollimmunisierung)\"}],\"ValidFrom\":\"2021-08-15T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dn\",\"v.0.sd\"],\"Logic\":{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\"]]},{\"if\":[{\"<\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},false,true]},true]},\"Region\":\"ET\"}"
         },
         {
+            "i": "\"RR-AT-0002-MD\"",
+            "r": "{\"Identifier\":\"RR-AT-0002-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The positive NAA test result (e.g., PCR) must be no older than 180 days.\"},{\"lang\":\"de\",\"desc\":\"Der positive NAA-Test (z.B. PCR) darf maximal 180 Tage zurückliegen.\"}],\"ValidFrom\":\"2021-07-01T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},180,\"day\"]},null]},\"Region\":\"ET-MD\"}"
+        },
+        {
+            "i": "\"TR-AT-0005-MD\"",
+            "r": "{\"Identifier\":\"TR-AT-0005-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"DateTime of Sample Collection must be less than 24 hours before the Verification Datetime for a test of type RAT (rapid antigen test).\"}],\"ValidFrom\":\"2021-09-15T05:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP217198-3\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},24,\"hour\"]},null]},\"Region\":\"ET-MD\"}"
+        },
+        {
+            "i": "\"TR-AT-0006-MD\"",
+            "r": "{\"Identifier\":\"TR-AT-0006-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"DateTime of Sample Collection must be less than 72 hours before the Verification Datetime for a test of type NAA (PCR test).\"}],\"ValidFrom\":\"2021-07-01T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP6464-4\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},72,\"hour\"]},null]},\"Region\":\"ET-MD\"}"
+        },
+        {
+            "i": "\"VR-AT-0007-MD\"",
+            "r": "{\"Identifier\":\"VR-AT-0007-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine == Johnson) -> Verification Datetime must be more than 22 days and less than 270 days after vaccination date\"}],\"ValidFrom\":\"2021-08-15T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1525\"]]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},270,\"day\"]},null]},\"Region\":\"ET-MD\"}"
+        },
+        {
+            "i": "\"VR-AT-0008-MD\"",
+            "r": "{\"Identifier\":\"VR-AT-0008-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine <> Johnson) & (sequencenumber >= total number of doses) -> Verification Datetime must be less than 360 days after vaccination date\"}],\"ValidFrom\":\"2021-09-15T05:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"and\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\"]]},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]}]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},360,\"day\"]},null]},\"Region\":\"ET-MD\"}"
+        },
+        {
             "i": "\"GR-AT-0000\"",
             "r": "{\"Identifier\":\"GR-AT-0000\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Exactly one type of event.\"},{\"lang\":\"de\",\"desc\":\"Genau ein Event-Typ vorhanden.\"}],\"ValidFrom\":\"2021-07-01T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"r\",\"t\",\"v\"],\"Logic\":{\"===\":[{\"reduce\":[[{\"var\":\"payload.r\"},{\"var\":\"payload.t\"},{\"var\":\"payload.v\"}],{\"+\":[{\"var\":\"accumulator\"},{\"if\":[{\"var\":\"current.0\"},1,0]}]},0]},1]},\"Region\":\"ET-W\"}"
         },
@@ -885,10 +905,6 @@
             "r": "{\"Identifier\":\"TR-AT-0004\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Test result must be negative (\\\"not detected\\\").\"}],\"ValidFrom\":\"2021-07-01T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.tr\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"===\":[{\"var\":\"payload.t.0.tr\"},\"260415000\"]},true]},\"Region\":\"ET-W\"}"
         },
         {
-            "i": "\"TR-AT-0005-D\"",
-            "r": "{\"Identifier\":\"TR-AT-0005-D\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"DateTime of Sample Collection must be less than 24 hours before the Verification Datetime for a test of type RAT (rapid antigen test).\"}],\"ValidFrom\":\"2021-09-15T05:00:00Z\",\"ValidTo\":\"2021-09-30T22:00:00Z\",\"AffectedFields\":[\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP217198-3\"]},{\"before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},24,\"hour\"]}]},true]},\"Region\":\"ET-W\"}"
-        },
-        {
             "i": "\"TR-AT-0005-E\"",
             "r": "{\"Identifier\":\"TR-AT-0005-E\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"For people older than 12y, DateTime of Sample Collection must be less than 24 hours before the Verification Datetime for a test of type RAT (rapid antigen test).\"}],\"ValidFrom\":\"2021-09-30T22:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0.sc\",\"t.0.tt\",\"dob\"],\"Logic\":{\"if\":[{\"and\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP217198-3\"]},{\"after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.dob\"},12,\"year\"]}]}]},false,true]},\"Region\":\"ET-W\"}"
         },
@@ -921,12 +937,32 @@
             "r": "{\"Identifier\":\"VR-AT-0008-A\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine <> Johnson) & (sequencenumber >= total number of doses) -> Verification Datetime must be less than 360 days after vaccination date\"}],\"ValidFrom\":\"2021-09-30T22:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\"]]},{\"if\":[{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},360,\"day\"]}]},true]},true]},\"Region\":\"ET-W\"}"
         },
         {
-            "i": "\"VR-AT-0008\"",
-            "r": "{\"Identifier\":\"VR-AT-0008\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine <> Johnson) & (sequencenumber >= total number of doses) -> Verification Datetime must be less than 270 days after vaccination date\"}],\"ValidFrom\":\"2021-08-15T00:00:00Z\",\"ValidTo\":\"2021-09-30T22:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\"]]},{\"if\":[{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},270,\"day\"]}]},true]},true]},\"Region\":\"ET-W\"}"
-        },
-        {
             "i": "\"VR-AT-0009\"",
             "r": "{\"Identifier\":\"VR-AT-0009\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine <> Johnson) & (sequencenumber < total number of doses) -> false (keine Vollimmunisierung)\"}],\"ValidFrom\":\"2021-08-15T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dn\",\"v.0.sd\"],\"Logic\":{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\"]]},{\"if\":[{\"<\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},false,true]},true]},\"Region\":\"ET-W\"}"
+        },
+        {
+            "i": "\"RR-AT-0002-MD\"",
+            "r": "{\"Identifier\":\"RR-AT-0002-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The positive NAA test result (e.g., PCR) must be no older than 180 days.\"},{\"lang\":\"de\",\"desc\":\"Der positive NAA-Test (z.B. PCR) darf maximal 180 Tage zurückliegen.\"}],\"ValidFrom\":\"2021-07-01T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},180,\"day\"]},\"Region\":\"ET-W-MD\"}"
+        },
+        {
+            "i": "\"TR-AT-0005-MD\"",
+            "r": "{\"Identifier\":\"TR-AT-0005-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"For people younger than 12y, DateTime of Sample Collection must be less than 48 hours before the Verification Datetime for a test of type RAT (rapid antigen test).\"}],\"ValidFrom\":\"2021-09-30T22:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0.sc\",\"t.0.tt\",\"dob\"],\"Logic\":{\"if\":[{\"and\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP217198-3\"]},{\"before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.dob\"},12,\"year\"]}]}]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},48,\"hour\"]},null]},\"Region\":\"ET-W-MD\"}"
+        },
+        {
+            "i": "\"TR-AT-0006-MD\"",
+            "r": "{\"Identifier\":\"TR-AT-0006-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"For people older than 12y, DateTime of Sample Collection must be less than 48 hours before the Verification Datetime for a test of type NAA (PCR test).\"}],\"ValidFrom\":\"2021-08-31T22:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0.sc\",\"t.0.tt\",\"dob\"],\"Logic\":{\"if\":[{\"and\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP6464-4\"]},{\"after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.dob\"},12,\"year\"]}]}]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},48,\"hour\"]},null]},\"Region\":\"ET-W-MD\"}"
+        },
+        {
+            "i": "\"TR-AT-0006-MD\"",
+            "r": "{\"Identifier\":\"TR-AT-0006-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"For people younger than 12y, DateTime of Sample Collection must be less than 72 hours before the Verification Datetime for a test of type NAA (PCR test).\"}],\"ValidFrom\":\"2021-08-31T22:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0.sc\",\"t.0.tt\",\"dob\"],\"Logic\":{\"if\":[{\"and\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP6464-4\"]},{\"before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.dob\"},12,\"year\"]}]}]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},72,\"hour\"]},null]},\"Region\":\"ET-W-MD\"}"
+        },
+        {
+            "i": "\"VR-AT-0007-MD\"",
+            "r": "{\"Identifier\":\"VR-AT-0007-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine == Johnson) -> Verification Datetime must be more than 22 days and less than 270 days after vaccination date\"}],\"ValidFrom\":\"2021-08-15T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1525\"]]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},270,\"day\"]},null]},\"Region\":\"ET-W-MD\"}"
+        },
+        {
+            "i": "\"VR-AT-0008-MD\"",
+            "r": "{\"Identifier\":\"VR-AT-0008-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine <> Johnson) & (sequencenumber >= total number of doses) -> Verification Datetime must be less than 360 days after vaccination date\"}],\"ValidFrom\":\"2021-09-30T22:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"and\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\"]]},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]}]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},360,\"day\"]},null]},\"Region\":\"ET-W-MD\"}"
         },
         {
             "i": "\"GR-AT-0000\"",
@@ -981,12 +1017,24 @@
             "r": "{\"Identifier\":\"VR-AT-0009\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine <> Johnson) & (sequencenumber < total number of doses) -> false (keine Vollimmunisierung)\"}],\"ValidFrom\":\"2021-08-15T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dn\",\"v.0.sd\"],\"Logic\":{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\"]]},{\"if\":[{\"<\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},false,true]},true]},\"Region\":\"NG\"}"
         },
         {
-            "i": "\"GR-AT-0000\"",
-            "r": "{\"Identifier\":\"GR-AT-0000\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Exactly one type of event.\"},{\"lang\":\"de\",\"desc\":\"Genau ein Event-Typ vorhanden. AT Nachtgastronomie: nur r oder v, KEIN t\"}],\"ValidFrom\":\"2021-09-30T22:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"r\",\"t\",\"v\"],\"Logic\":{\"===\":[{\"reduce\":[[{\"var\":\"payload.r\"},{\"var\":\"payload.v\"}],{\"+\":[{\"var\":\"accumulator\"},{\"if\":[{\"var\":\"current.0\"},1,0]}]},0]},1]},\"Region\":\"NG-W\"}"
+            "i": "\"RR-AT-0002-MD\"",
+            "r": "{\"Identifier\":\"RR-AT-0002-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The positive NAA test result (e.g., PCR) must be no older than 180 days.\"},{\"lang\":\"de\",\"desc\":\"Der positive NAA-Test (z.B. PCR) darf maximal 180 Tage zurückliegen.\"}],\"ValidFrom\":\"2021-09-15T05:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},180,\"day\"]},null]},\"Region\":\"NG-MD\"}"
+        },
+        {
+            "i": "\"TR-AT-0006-MD\"",
+            "r": "{\"Identifier\":\"TR-AT-0006-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"DateTime of Sample Collection must be less than 72 hours before the Verification Datetime for a test of type NAA (PCR test).\"}],\"ValidFrom\":\"2021-07-01T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP6464-4\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},72,\"hour\"]},null]},\"Region\":\"NG-MD\"}"
+        },
+        {
+            "i": "\"VR-AT-0007-MD\"",
+            "r": "{\"Identifier\":\"VR-AT-0007-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine == Johnson) -> Verification Datetime must be more than 22 days and less than 270 days after vaccination date\"}],\"ValidFrom\":\"2021-08-15T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1525\"]]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},270,\"day\"]},null]},\"Region\":\"NG-MD\"}"
+        },
+        {
+            "i": "\"VR-AT-0008-MD\"",
+            "r": "{\"Identifier\":\"VR-AT-0008-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine <> Johnson) & (sequencenumber >= total number of doses) -> Verification Datetime must be less than 360 days after vaccination date\"}],\"ValidFrom\":\"2021-09-15T05:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"and\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\"]]},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]}]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},360,\"day\"]},true]},\"Region\":\"NG-MD\"}"
         },
         {
             "i": "\"GR-AT-0000\"",
-            "r": "{\"Identifier\":\"GR-AT-0000\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Exactly one type of event.\"},{\"lang\":\"de\",\"desc\":\"Genau ein Event-Typ vorhanden.\"}],\"ValidFrom\":\"2021-09-15T05:00:00Z\",\"ValidTo\":\"2021-09-30T22:00:00Z\",\"AffectedFields\":[\"r\",\"t\",\"v\"],\"Logic\":{\"===\":[{\"reduce\":[[{\"var\":\"payload.r\"},{\"var\":\"payload.t\"},{\"var\":\"payload.v\"}],{\"+\":[{\"var\":\"accumulator\"},{\"if\":[{\"var\":\"current.0\"},1,0]}]},0]},1]},\"Region\":\"NG-W\"}"
+            "r": "{\"Identifier\":\"GR-AT-0000\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Exactly one type of event.\"},{\"lang\":\"de\",\"desc\":\"Genau ein Event-Typ vorhanden. AT Nachtgastronomie: nur r oder v, KEIN t\"}],\"ValidFrom\":\"2021-09-30T22:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"r\",\"t\",\"v\"],\"Logic\":{\"===\":[{\"reduce\":[[{\"var\":\"payload.r\"},{\"var\":\"payload.v\"}],{\"+\":[{\"var\":\"accumulator\"},{\"if\":[{\"var\":\"current.0\"},1,0]}]},0]},1]},\"Region\":\"NG-W\"}"
         },
         {
             "i": "\"GR-AT-0001\"",
@@ -999,22 +1047,6 @@
         {
             "i": "\"RR-AT-0002\"",
             "r": "{\"Identifier\":\"RR-AT-0002\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The positive NAA test result (e.g., PCR) must be no older than 180 days.\"},{\"lang\":\"de\",\"desc\":\"Der positive NAA-Test (z.B. PCR) darf maximal 180 Tage zurückliegen.\"}],\"ValidFrom\":\"2021-09-15T05:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},180,\"day\"]}]},true]},\"Region\":\"NG-W\"}"
-        },
-        {
-            "i": "\"TR-AT-0000\"",
-            "r": "{\"Identifier\":\"TR-AT-0000\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"At most one t-event.\"}],\"ValidFrom\":\"2021-07-01T00:00:00Z\",\"ValidTo\":\"2021-09-30T22:00:00Z\",\"AffectedFields\":[\"t.1\"],\"Logic\":{\"!\":[{\"var\":\"payload.t.1\"}]},\"Region\":\"NG-W\"}"
-        },
-        {
-            "i": "\"TR-AT-0001\"",
-            "r": "{\"Identifier\":\"TR-AT-0001\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The test type must be NAAT (PCR)\"}],\"ValidFrom\":\"2021-07-01T00:00:00Z\",\"ValidTo\":\"2021-09-30T22:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"in\":[{\"var\":\"payload.t.0.tt\"},[\"LP6464-4\"]]},true]},\"Region\":\"NG-W\"}"
-        },
-        {
-            "i": "\"TR-AT-0004\"",
-            "r": "{\"Identifier\":\"TR-AT-0004\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Test result must be negative (\\\"not detected\\\").\"}],\"ValidFrom\":\"2021-07-01T00:00:00Z\",\"ValidTo\":\"2021-09-30T22:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.tr\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"===\":[{\"var\":\"payload.t.0.tr\"},\"260415000\"]},true]},\"Region\":\"NG-W\"}"
-        },
-        {
-            "i": "\"TR-AT-0006-D\"",
-            "r": "{\"Identifier\":\"TR-AT-0006-D\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"DateTime of Sample Collection must be less than 72 hours before the Verification Datetime for a test of type NAA (PCR test).\"}],\"ValidFrom\":\"2021-09-15T05:00:00Z\",\"ValidTo\":\"2021-09-30T22:00:00Z\",\"AffectedFields\":[\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP6464-4\"]},{\"before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},72,\"hour\"]}]},true]},\"Region\":\"NG-W\"}"
         },
         {
             "i": "\"VR-AT-0000\"",
@@ -1035,6 +1067,18 @@
         {
             "i": "\"VR-AT-0009\"",
             "r": "{\"Identifier\":\"VR-AT-0009\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine <> Johnson) & (sequencenumber < total number of doses) -> false (keine Vollimmunisierung)\"}],\"ValidFrom\":\"2021-08-15T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dn\",\"v.0.sd\"],\"Logic\":{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\"]]},{\"if\":[{\"<\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},false,true]},true]},\"Region\":\"NG-W\"}"
+        },
+        {
+            "i": "\"RR-AT-0002-MD\"",
+            "r": "{\"Identifier\":\"RR-AT-0002-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The positive NAA test result (e.g., PCR) must be no older than 180 days.\"},{\"lang\":\"de\",\"desc\":\"Der positive NAA-Test (z.B. PCR) darf maximal 180 Tage zurückliegen.\"}],\"ValidFrom\":\"2021-09-15T05:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},180,\"day\"]},null]},\"Region\":\"NG-W-MD\"}"
+        },
+        {
+            "i": "\"VR-AT-0007-MD\"",
+            "r": "{\"Identifier\":\"VR-AT-0007-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine == Johnson) -> Verification Datetime must be more than 22 days and less than 270 days after vaccination date\"}],\"ValidFrom\":\"2021-08-15T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1525\"]]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},270,\"day\"]},null]},\"Region\":\"NG-W-MD\"}"
+        },
+        {
+            "i": "\"VR-AT-0008-MD\"",
+            "r": "{\"Identifier\":\"VR-AT-0008-MD\",\"Type\":\"Acceptance\",\"Country\":\"AT\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"AT-METADATA\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If (Vaccine <> Johnson) & (sequencenumber >= total number of doses) -> Verification Datetime must be less than 360 days after vaccination date\"}],\"ValidFrom\":\"2021-09-15T05:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0.mp\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"and\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\"]]},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]}]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},360,\"day\"]},null]},\"Region\":\"NG-W-MD\"}"
         }
     ]
 }
