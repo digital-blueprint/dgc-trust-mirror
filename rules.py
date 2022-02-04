@@ -20,6 +20,7 @@ def main(argv):
             rule.pop("SchemaVersion", None)
             rule.pop("EngineVersion", None)
             rule.pop("Country", None)
+            rule.pop("Engine", None)
 
             for desc in list(rule["Description"]):
                 if desc["lang"] == "en":
