@@ -13,7 +13,7 @@ def main(argv):
 
     for r in rules["r"]:
         rule = json.loads(r["r"])
-        if rule["Country"] == "AT" and rules["Engine"] == "CERTLOGIC":
+        if rule["Country"] == "AT" and rule["Engine"] == "CERTLOGIC":
 
             rule.pop("Logic", None)
             rule.pop("AffectedFields", None)
