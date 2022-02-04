@@ -13,11 +13,14 @@ def main(argv):
 
     for r in rules["r"]:
         rule = json.loads(r["r"])
-        if rule["Country"] == "AT":
+        if rule["Country"] == "AT" and rules["Engine"] == "CERTLOGIC":
 
             rule.pop("Logic", None)
             rule.pop("AffectedFields", None)
-            
+            rule.pop("SchemaVersion", None)
+            rule.pop("EngineVersion", None)
+            rule.pop("Country", None)
+
             for desc in list(rule["Description"]):
                 if desc["lang"] == "en":
                     rule["Description"] = desc["desc"]
