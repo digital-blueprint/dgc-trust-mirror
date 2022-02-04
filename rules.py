@@ -9,27 +9,21 @@ def main(argv):
         rules = json.loads(h.read())
 
     all_ = []
-    keys = []
+    columns = [
+        "Identifier", "Version", "CertificateType", "Description", "ValidFrom", "ValidTo", "Region"]
 
     for r in rules["r"]:
         rule = json.loads(r["r"])
         if rule["Country"] == "AT" and rule["Engine"] == "CERTLOGIC":
-
-            rule.pop("Logic", None)
-            rule.pop("AffectedFields", None)
-            rule.pop("SchemaVersion", None)
-            rule.pop("EngineVersion", None)
-            rule.pop("Country", None)
-            rule.pop("Engine", None)
-
             for desc in list(rule["Description"]):
                 if desc["lang"] == "en":
                     rule["Description"] = desc["desc"]
-
-            all_.append(list(rule.values()))
-            keys = list(rule.keys())
+            row = []
+            for column in columns:
+                row.append(rule.pop(column, ""))
+            all_.append(row)
     all_.sort(key=lambda e: (e[-1], e[-3], e[0]), reverse=True)
-    print(tabulate(all_, keys, tablefmt="github"))
+    print(tabulate(all_, columns, tablefmt="github"))
 
 if __name__ == "__main__":
     main(sys.argv)
