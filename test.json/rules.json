@@ -933,10 +933,6 @@
             "r": "{\"Country\":\"CH\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"SchemaVersion\":\"1.0.0\",\"Type\":\"Acceptance\",\"ValidTo\":\"2031-01-01T00:00:00Z\",\"Identifier\":\"GR-CH-0002\",\"Version\":\"1.0.12\",\"ValidFrom\":\"2022-03-06T00:00:00Z\",\"CertificateType\":\"General\",\"Logic\":{\"if\":[true,true,{\"var\":\"payload.v\"}]},\"AffectedFields\":[\"v\"],\"Description\":[{\"desc\":\"EU/EFTA citizens and their family members, irrespective of their nationality, have rights of free movement. Entry to the country is currently possible without pandemic-related measures.\",\"lang\":\"en\"}]}"
         },
         {
-            "i": "GR-MT-0000",
-            "r": "{\"Identifier\":\"GR-MT-0000\",\"Type\":\"Acceptance\",\"Country\":\"MT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Exactly one type of event.\"}],\"ValidFrom\":\"2022-01-15T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t\",\"v\",\"r\"],\"Logic\":{\"===\":[{\"reduce\":[[{\"var\":\"payload.r\"},{\"var\":\"payload.t\"},{\"var\":\"payload.v\"}],{\"+\":[{\"var\":\"accumulator\"},{\"if\":[{\"var\":\"current.0\"},1,0]}]},0]},1]}}"
-        },
-        {
             "i": "TR-MT-0001",
             "r": "{\"Identifier\":\"TR-MT-0001\",\"Type\":\"Acceptance\",\"Country\":\"MT\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The sample for an NAA test (e.g., PCR) must have been taken no longer than 72 hours ago.\"}],\"ValidFrom\":\"2021-07-17T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP6464-4\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},72,\"hour\"]}]},true]},true]}}"
         },
