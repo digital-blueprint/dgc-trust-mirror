@@ -794,7 +794,7 @@
         },
         {
             "i": "VR-MT-0002",
-            "r": "{\"Identifier\":\"VR-MT-0002\",\"Type\":\"Acceptance\",\"Country\":\"MT\",\"Version\":\"3.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only vaccines in the allowed valueset that have been approved by the Maltese Goverment are allowed.\"}],\"ValidFrom\":\"2022-01-20T00:00:00Z\",\"ValidTo\":\"2031-12-15T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1507\",\"EU/1/20/1525\",\"EU/1/20/1528\",\"EU/1/21/1529\"]]},true]}}"
+            "r": "{\"Identifier\":\"VR-MT-0002\",\"Type\":\"Acceptance\",\"Country\":\"MT\",\"Version\":\"3.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only vaccines in the allowed valueset that have been approved by the Maltese Goverment are allowed.\"}],\"ValidFrom\":\"2022-04-21T00:00:00Z\",\"ValidTo\":\"2031-12-15T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1507\",\"EU/1/20/1525\",\"EU/1/20/1528\",\"EU/1/21/1529\",\"EU/1/21/1618\"]]},true]}}"
         },
         {
             "i": "RR-MT-0001",
