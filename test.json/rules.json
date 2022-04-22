@@ -1,54 +1,6 @@
 {
     "r": [
         {
-            "i": "TR-ZZ-0001",
-            "r": "{\"Identifier\":\"TR-ZZ-0001\",\"Type\":\"Acceptance\",\"Country\":\"ZZ\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"This must be an antigen test (e.g., rapid test) or NAA test (e.g., PCR).\"},{\"lang\":\"de\",\"desc\":\"Es muss ein Antigen-Test (z.B. Schnelltest) oder NAA-Test (z.B. PCR) sein.\"}],\"ValidFrom\":\"2021-07-16T14:43:21+02:00\",\"ValidTo\":\"2031-04-15T14:43:21+02:00\",\"AffectedFields\":[\"t.0\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"in\":[{\"var\":\"payload.t.0.tt\"},[\"LP217198-3\",\"LP6464-4\"]]},true]}}"
-        },
-        {
-            "i": "VR-ZZ-0004",
-            "r": "{\"Identifier\":\"VR-ZZ-0004\",\"Type\":\"Acceptance\",\"Country\":\"ZZ\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccination must be more than 14 days ago.\"},{\"lang\":\"de\",\"desc\":\"Seit der Impfung darf maximal ein Jahr vergangen sein.\"}],\"ValidFrom\":\"2021-07-16T14:43:21+02:00\",\"ValidTo\":\"2031-04-15T14:43:21+02:00\",\"AffectedFields\":[\"v.0\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},365,\"day\"]}]},true]}}"
-        },
-        {
-            "i": "IR-ZZ-0002",
-            "r": "{\"Identifier\":\"IR-ZZ-0002\",\"Type\":\"Invalidation\",\"Country\":\"ZZ\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"1.2.1\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Issuer that has been compromised\"},{\"lang\":\"de\",\"desc\":\"Aussteller, der kompromittiert wurde\"}],\"ValidFrom\":\"2021-09-19T00:00:00+02:00\",\"ValidTo\":\"2031-08-18T00:00:00+02:00\",\"AffectedFields\":[\"v.0\",\"v.0.ci\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"extractFromUVCI\":[{\"var\":\"payload.v.0.ci\"},2]},\"10807843F94AEE0EE5093FBC254BD813\"]},false,true]},true]}}"
-        },
-        {
-            "i": "VR-ZZ-0002",
-            "r": "{\"Identifier\":\"VR-ZZ-0002\",\"Type\":\"Acceptance\",\"Country\":\"ZZ\",\"Version\":\"1.0.52\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only the following vaccines are accepted: AstraZeneca, Janssen, Moderna.\"},{\"lang\":\"de\",\"desc\":\"Nur die folgenden Impfstoffe werden akzeptiert: AstraZeneca, Janssen, Moderna.\"}],\"ValidFrom\":\"2021-08-12T00:00:00+02:00\",\"ValidTo\":\"2021-08-15T00:00:00+02:00\",\"AffectedFields\":[\"v.0\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1507\",\"EU/1/21/1529\",\"EU/1/20/1525\"]]},true]}}"
-        },
-        {
-            "i": "IR-ZZ-0001",
-            "r": "{\"Identifier\":\"IR-ZZ-0001\",\"Type\":\"Invalidation\",\"Country\":\"ZZ\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The test center ILLEGAL TC  is not allowed.\"},{\"lang\":\"de\",\"desc\":\"Das Test Center \\\"ILLEGAL TC\\\" ist nicht zugelassen.\"}],\"ValidFrom\":\"2021-08-20T11:20:37+02:00\",\"ValidTo\":\"2031-08-18T11:20:37+02:00\",\"AffectedFields\":[\"t.0.tc\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tc\"},\"ILLEGAL TC\"]},false,true]},true]}}"
-        },
-        {
-            "i": "RR-ZZ-0001",
-            "r": "{\"Identifier\":\"RR-ZZ-0001\",\"Type\":\"Acceptance\",\"Country\":\"ZZ\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.5.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The positive NAA test result (e.g., PCR) must be older than 28 days.\"},{\"lang\":\"de\",\"desc\":\"Der positive NAA-Test (z.B. PCR) muss mindestens 28 Tage zurückliegen.\"}],\"ValidFrom\":\"2021-07-16T14:43:21+02:00\",\"ValidTo\":\"2031-04-15T14:43:21+02:00\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},28,\"day\"]}]},true]}}"
-        },
-        {
-            "i": "TR-ZZ-0004",
-            "r": "{\"Identifier\":\"TR-ZZ-0004\",\"Type\":\"Acceptance\",\"Country\":\"ZZ\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The test result must be negative.\"},{\"lang\":\"de\",\"desc\":\"Das Ergebnis des Tests muss negativ sein.\"}],\"ValidFrom\":\"2021-07-16T14:43:21+02:00\",\"ValidTo\":\"2031-04-15T14:43:21+02:00\",\"AffectedFields\":[\"t.0\",\"t.0.tr\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"===\":[{\"var\":\"payload.t.0.tr\"},\"260415000\"]},true]}}"
-        },
-        {
-            "i": "VR-ZZ-0003",
-            "r": "{\"Identifier\":\"VR-ZZ-0003\",\"Type\":\"Acceptance\",\"Country\":\"ZZ\",\"Version\":\"1.0.1\",\"SchemaVersion\":\"1.5.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine must have been administered at least 14 days ago.\"},{\"lang\":\"de\",\"desc\":\"Seit der Impfung müssen mindestens 14 Tage vergangen sein.\"},{\"lang\":\"fr\",\"desc\":\"La vaccination doit dater de plus de 14 jours.\"}],\"ValidFrom\":\"2021-12-20T00:00:00+02:00\",\"ValidTo\":\"2031-04-15T14:43:21+02:00\",\"AffectedFields\":[\"v.0\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]}]},true]}}"
-        },
-        {
-            "i": "RR-ZZ-0002",
-            "r": "{\"Identifier\":\"RR-ZZ-0002\",\"Type\":\"Acceptance\",\"Country\":\"ZZ\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"3.0.1\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The positive NAA test result (e.g., PCR) must be no older than 6 months.\"},{\"lang\":\"de\",\"desc\":\"Der positive NAA-Test (z.B. PCR) darf maximal 6 Monate zurückliegen.\"}],\"ValidFrom\":\"2021-07-16T14:43:21+02:00\",\"ValidTo\":\"2031-04-15T14:43:21+02:00\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},183,\"day\"]}]},true]}}"
-        },
-        {
-            "i": "TR-ZZ-0003",
-            "r": "{\"Identifier\":\"TR-ZZ-0003\",\"Type\":\"Acceptance\",\"Country\":\"ZZ\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The sample for an NAA test (e.g., PCR) must have been taken no longer than 72 hours ago.\"}],\"ValidFrom\":\"2021-07-16T14:43:21+02:00\",\"ValidTo\":\"2031-04-15T14:43:21+02:00\",\"AffectedFields\":[\"t.0\",\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP6464-4\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},72,\"hour\"]}]},true]},true]}}"
-        },
-        {
-            "i": "TR-ZZ-0002",
-            "r": "{\"Identifier\":\"TR-ZZ-0002\",\"Type\":\"Acceptance\",\"Country\":\"ZZ\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The sample for an antigen test (e.g., rapid test) must have been taken no longer than 48 hours ago.\"},{\"lang\":\"fr\",\"desc\":\"Le prélèvement pour un test antigénique (p. ex. test rapide) ne doit pas dater de plus de 48 heures.\"}],\"ValidFrom\":\"2021-07-16T14:43:21+02:00\",\"ValidTo\":\"2031-04-15T14:43:21+02:00\",\"AffectedFields\":[\"t.0\",\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP217198-3\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},48,\"hour\"]}]},true]},true]}}"
-        },
-        {
-            "i": "VR-ZZ-0001",
-            "r": "{\"Identifier\":\"VR-ZZ-0001\",\"Type\":\"Acceptance\",\"Country\":\"ZZ\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccination schedule must be complete (e.g., 1/1, 2/2).\"},{\"lang\":\"de\",\"desc\":\"Die Impfreihe muss vollständig sein (z.B. 1/1, 2/2).\"}],\"ValidFrom\":\"2021-07-16T14:43:21+02:00\",\"ValidTo\":\"2031-04-15T14:43:21+02:00\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},true]}}"
-        },
-        {
             "i": "VR-RS-0003",
             "r": "{\"Identifier\":\"VR-RS-0003\",\"Type\":\"Acceptance\",\"Country\":\"RS\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine must have been administered no longer than seven months ago.\"}],\"ValidFrom\":\"2021-11-05T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},210,\"day\"]}]},true]}}"
         },
