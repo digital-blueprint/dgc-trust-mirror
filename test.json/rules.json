@@ -790,7 +790,7 @@
         },
         {
             "i": "GR-EE-0001",
-            "r": "{\"Identifier\":\"GR-EE-0001\",\"Type\":\"Acceptance\",\"Country\":\"EE\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Entry to the country is currently possible without pandemic-related measures.\"}],\"ValidFrom\":\"2022-06-23T12:00:00Z\",\"ValidTo\":\"2099-01-01T00:00:00Z\",\"AffectedFields\":[\"v.0\"],\"Logic\":{\"if\":[true,true,{\"var\":\"payload.v\"}]}}"
+            "r": "{\"Identifier\":\"GR-EE-0001\",\"Type\":\"Acceptance\",\"Country\":\"EE\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Entry to the country is currently possible without pandemic-related measures.\"}],\"ValidFrom\":\"2022-06-24T12:00:00Z\",\"ValidTo\":\"2099-01-01T00:00:00Z\",\"AffectedFields\":[\"v.0\"],\"Logic\":{\"if\":[true,true,{\"var\":\"payload.v\"}]}}"
         },
         {
             "i": "RR-SV-0002",
