@@ -477,20 +477,12 @@
             "r": "{\"Identifier\":\"VR-FR-0010\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only prophylactic agents in the allowed valueset that have been approved by the EMA are allowed.\"},{\"lang\":\"fr\",\"desc\":\"Seuls les agents prophylactiques approuvés par l'AEM (Value set UE) sont acceptés en France.\"}],\"ValidFrom\":\"2022-01-29T10:00:00Z\",\"ValidTo\":\"2032-01-29T10:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.vp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.vp\"},{\"var\":\"external.valueSets.sct-vaccines-covid-19\"}]},true]}}"
         },
         {
-            "i": "TR-FR-0006",
-            "r": "{\"Identifier\":\"TR-FR-0006\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.4\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The Verification Datetime must be between +11 days and +183 days after the test date.\"},{\"lang\":\"fr\",\"desc\":\"La date de verification doit etre comprise entre +11 jours et +183 jours après la date de test.\"}],\"ValidFrom\":\"2022-03-28T08:00:00Z\",\"ValidTo\":\"2032-01-28T08:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.tr\",\"t.0.sc\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tr\"},\"260373001\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},11,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},183,\"day\"]}]},true]},true]}}"
-        },
-        {
             "i": "TR-FR-0001",
             "r": "{\"Identifier\":\"TR-FR-0001\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.1\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The test type must be one of the value set list (RAT OR NAA).\"},{\"lang\":\"fr\",\"desc\":\"Le type de test doit etre l'une des valeurs proposées du value set (RAT OR NAA).\"}],\"ValidFrom\":\"2022-01-29T10:00:00Z\",\"ValidTo\":\"2032-01-29T10:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"in\":[{\"var\":\"payload.t.0.tt\"},{\"var\":\"external.valueSets.covid-19-lab-test-type\"}]},true]}}"
         },
         {
             "i": "TR-FR-0000",
             "r": "{\"Identifier\":\"TR-FR-0000\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Test format is not EU standard.\"},{\"lang\":\"fr\",\"desc\":\"Le format lié au test n'est pas au standard UE.\"}],\"ValidFrom\":\"2022-01-29T10:00:00Z\",\"ValidTo\":\"2032-01-29T10:00:00Z\",\"AffectedFields\":[\"t.1\"],\"Logic\":{\"!\":[{\"var\":\"payload.t.1\"}]}}"
-        },
-        {
-            "i": "TR-FR-0004",
-            "r": "{\"Identifier\":\"TR-FR-0004\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The antigen test (e.g., rapid test) must be included in the EU’s \\\"Common list of COVID-19 rapid antigen tests\\\".\"},{\"lang\":\"fr\",\"desc\":\"Le test antigénique (p. ex. test rapide) doit figurer sur la liste commune des tests antigéniques rapides « Common list of rapid antigen tests » de l’UE.\"}],\"ValidFrom\":\"2022-01-29T10:00:00Z\",\"ValidTo\":\"2032-01-29T10:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.ma\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP217198-3\"]},{\"in\":[{\"var\":\"payload.t.0.ma\"},{\"var\":\"external.valueSets.covid-19-lab-test-manufacturer-and-name\"}]},true]},true]}}"
         },
         {
             "i": "TR-FR-0003",

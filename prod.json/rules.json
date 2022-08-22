@@ -329,6 +329,10 @@
             "r": "{\"Identifier\":\"VR-UA-0001\",\"Type\":\"Acceptance\",\"Country\":\"UA\",\"Version\":\"1.2.1\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only vaccines in the allowed valueset that have been approved by the WHO are allowed.\"},{\"lang\":\"ua\",\"desc\":\"Дозволені лише вакцини з дозволеного набору значень, затверджені WHO.\"}],\"ValidFrom\":\"2022-03-12T14:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"Sputnik-V\",\"Sputnik-Light\",\"EpiVacCorona\",\"R-COVI\",\"CoviVac\",\"EpiVacCorona-N\",\"Sputnik-M\"]]},false,true]}}"
         },
         {
+            "i": "VR-UA-0001",
+            "r": "{\"Identifier\":\"VR-UA-0001\",\"Type\":\"Acceptance\",\"Country\":\"UA\",\"Version\":\"1.2.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"List of vaccines that are prohibited in Ukraine.\"},{\"lang\":\"ua\",\"desc\":\"Список заборонених в Україні вакцин.\"}],\"ValidFrom\":\"2022-08-24T14:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"Sputnik-V\",\"Sputnik-Light\",\"EpiVacCorona\",\"R-COVI\",\"CoviVac\",\"EpiVacCorona-N\",\"Sputnik-M\"]]},false,true]}}"
+        },
+        {
             "i": "VR-UA-0000",
             "r": "{\"Identifier\":\"VR-UA-0000\",\"Type\":\"Acceptance\",\"Country\":\"UA\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"At most one v-event.\"},{\"lang\":\"ua\",\"desc\":\"Не більше одного набору даних про вакцинацію.\"}],\"ValidFrom\":\"2021-08-22T10:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.1\"],\"Logic\":{\"!\":[{\"var\":\"payload.v.1\"}]}}"
         },
