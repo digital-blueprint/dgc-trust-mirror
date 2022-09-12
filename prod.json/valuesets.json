@@ -13,10 +13,6 @@
             "v": "{\"valueSetId\":\"covid-19-lab-result\",\"valueSetDate\":\"2021-04-27\",\"valueSetValues\":{\"260415000\":{\"display\":\"Not detected\",\"lang\":\"en\",\"active\":true,\"version\":\"http://snomed.info/sct/900000000000207008/version/20210131\",\"system\":\"http://snomed.info/sct\"},\"260373001\":{\"display\":\"Detected\",\"lang\":\"en\",\"active\":true,\"version\":\"http://snomed.info/sct/900000000000207008/version/20210131\",\"system\":\"http://snomed.info/sct\"}}}"
         },
         {
-            "n": "disease-agent-targeted",
-            "v": "{\"valueSetId\":\"disease-agent-targeted\",\"valueSetDate\":\"2021-04-27\",\"valueSetValues\":{\"840539006\":{\"display\":\"COVID-19\",\"lang\":\"en\",\"active\":true,\"version\":\"http://snomed.info/sct/900000000000207008/version/20210131\",\"system\":\"http://snomed.info/sct\"}}}"
-        },
-        {
             "n": "sct-vaccines-covid-19",
             "v": "{\"valueSetId\":\"sct-vaccines-covid-19\",\"valueSetDate\":\"2021-04-27\",\"valueSetValues\":{\"1119349007\":{\"display\":\"SARS-CoV-2 mRNA vaccine\",\"lang\":\"en\",\"active\":true,\"version\":\"http://snomed.info/sct/900000000000207008/version/20210131\",\"system\":\"http://snomed.info/sct\"},\"1119305005\":{\"display\":\"SARS-CoV-2 antigen vaccine\",\"lang\":\"en\",\"active\":true,\"version\":\"http://snomed.info/sct/900000000000207008/version/20210131\",\"system\":\"http://snomed.info/sct\"},\"J07BX03\":{\"display\":\"covid-19 vaccines\",\"lang\":\"en\",\"active\":true,\"version\":\"2021-01\",\"system\":\"http://www.whocc.no/atc\"},\"1162643001\":{\"display\":\"SARS-CoV-2 recombinant spike protein antigen vaccine\",\"lang\":\"en\",\"active\":true,\"version\":\"2022-01-31\",\"system\":\"http://snomed.info/sct\"},\"1157024006\":{\"display\":\"Inactivated whole SARS-CoV-2 antigen vaccine\",\"lang\":\"en\",\"active\":true,\"version\":\"2022-01-31\",\"system\":\"http://snomed.info/sct\"},\"29061000087103\":{\"display\":\"COVID-19 non-replicating viral vector vaccine\",\"lang\":\"en\",\"active\":true,\"version\":\"2022-01-31\",\"system\":\"http://snomed.info/sct\"}}}"
         },
