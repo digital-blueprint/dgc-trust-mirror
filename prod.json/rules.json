@@ -958,7 +958,15 @@
         },
         {
             "i": "TR-SK-0005",
+            "r": "{\"Identifier\":\"TR-SK-0005\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"DateTime of Sample Collection must be less than 48 hours before the Verification Datetime for a test of type RAT (rapid antigen test). After time limit expiration of 72 hours, the test is valid only for the enter of the employee on the working place, or for commuters on the base of the evidence\"},{\"lang\":\"sk\",\"desc\":\"Od odberu vzorky pre test typu RAT (rapid antigen test) ubehlo viac ako 48 hodín. Po uplynutí 48 hodín je test platný IBA PRE VSTUP zamestnanca na pracovisko, alebo pre pendlerov na základe osobitej evidencie.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP217198-3\"]},{\"before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},48,\"hour\"]}]},true]}}"
+        },
+        {
+            "i": "TR-SK-0005",
             "r": "{\"Identifier\":\"TR-SK-0005\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"DateTime of Sample Collection must be less than 48 hours before the Verification Datetime for a test of type RAT (rapid antigen test). After time limit expiration of 72 hours, the test is valid only for the enter of the employee on the working place, or for commuters on the base of the evidence\"},{\"lang\":\"sk\",\"desc\":\"Od odberu vzorky pre test typu RAT (rapid antigen test) ubehlo viac ako 48 hodín. Po uplynutí 48 hodín je test platný IBA PRE VSTUP zamestnanca na pracovisko, alebo pre pendlerov na základe osobitej evidencie.\"}],\"ValidFrom\":\"2022-02-06T13:42:13Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP217198-3\"]},{\"before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},48,\"hour\"]}]},true]}}"
+        },
+        {
+            "i": "GR-SK-0000",
+            "r": "{\"Identifier\":\"GR-SK-0000\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Exactly one type of event.\"},{\"lang\":\"sk\",\"desc\":\"QR kód obsahuje staršiu verziu preukazu, ktorú nie je možné vyhodnotiť.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"r\",\"t\",\"v\"],\"Logic\":{\"===\":[{\"reduce\":[[{\"var\":\"payload.r\"},{\"var\":\"payload.t\"},{\"var\":\"payload.v\"}],{\"+\":[{\"var\":\"accumulator\"},{\"if\":[{\"var\":\"current.0\"},1,0]}]},0]},1]}}"
         },
         {
             "i": "GR-SK-0000",
@@ -966,7 +974,15 @@
         },
         {
             "i": "TR-SK-0003",
+            "r": "{\"Identifier\":\"TR-SK-0003\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Test result must be negative (\\\"not detected\\\").\"},{\"lang\":\"sk\",\"desc\":\"Výsledok testu musí byť negatívny.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.tr\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"===\":[{\"var\":\"payload.t.0.tr\"},\"260415000\"]},true]}}"
+        },
+        {
+            "i": "TR-SK-0003",
             "r": "{\"Identifier\":\"TR-SK-0003\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Test result must be negative (\\\"not detected\\\").\"},{\"lang\":\"sk\",\"desc\":\"Výsledok testu musí byť negatívny.\"}],\"ValidFrom\":\"2022-02-06T13:42:13Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.tr\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"===\":[{\"var\":\"payload.t.0.tr\"},\"260415000\"]},true]}}"
+        },
+        {
+            "i": "GR-SK-0001",
+            "r": "{\"Identifier\":\"GR-SK-0001\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The \\\"disease or agent targeted\\\" must be COVID-19 of the value set list.\"},{\"lang\":\"sk\",\"desc\":\"QR kód neobsahuje validný digitálny COVID preukaz EÚ.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"r.0.tg\",\"t.0.tg\",\"v.0.tg\"],\"Logic\":{\"!\":[{\"and\":[{\"!\":[{\"in\":[{\"var\":\"payload.r.0.tg\"},[\"840539006\"]]}]},{\"!\":[{\"in\":[{\"var\":\"payload.t.0.tg\"},[\"840539006\"]]}]},{\"!\":[{\"in\":[{\"var\":\"payload.v.0.tg\"},[\"840539006\"]]}]}]}]}}"
         },
         {
             "i": "GR-SK-0001",
@@ -974,7 +990,15 @@
         },
         {
             "i": "TR-SK-0008",
+            "r": "{\"Identifier\":\"TR-SK-0008\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If the test type is \\\"RAT\\\" then the \\\"test product and manufacturer\\\" MUST be in the valueset list, if it's NAA return true.\"},{\"lang\":\"sk\",\"desc\":\"Nepovolený výrobca testu.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0.ma\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP217198-3\"]},{\"in\":[{\"var\":\"payload.t.0.ma\"},[\"1065\",\"1097\",\"1114\",\"1144\",\"1162\",\"1173\",\"1178\",\"1180\",\"1190\",\"1197\",\"1199\",\"1201\",\"1215\",\"1216\",\"1218\",\"1223\",\"1225\",\"1228\",\"1232\",\"1236\",\"1242\",\"1243\",\"1244\",\"1253\",\"1257\",\"1263\",\"1266\",\"1267\",\"1268\",\"1271\",\"1278\",\"1286\",\"1295\",\"1296\",\"1304\",\"1319\",\"1324\",\"1331\",\"1333\",\"1341\",\"1343\",\"1347\",\"1353\",\"1357\",\"1360\",\"1363\",\"1365\",\"1375\",\"1392\",\"1420\",\"1437\",\"1443\",\"1456\",\"1457\",\"1465\",\"1466\",\"1468\",\"1481\",\"1484\",\"1485\",\"1489\",\"1490\",\"1494\",\"1495\",\"1501\",\"1574\",\"1581\",\"1599\",\"1604\",\"1606\",\"1610\",\"1618\",\"1654\",\"1691\",\"1736\",\"1739\",\"1747\",\"1759\",\"1762\",\"1763\",\"1764\",\"1767\",\"1768\",\"1769\",\"1773\",\"1775\",\"1778\",\"1800\",\"1801\",\"1813\",\"1815\",\"1820\",\"1822\",\"1833\",\"1844\",\"1855\",\"1870\",\"1876\",\"1880\",\"1884\",\"1902\",\"1906\",\"1919\",\"1920\",\"1929\",\"1934\",\"1945\",\"1957\",\"1960\",\"1967\",\"1989\",\"2006\",\"2010\",\"2012\",\"2013\",\"2017\",\"2026\",\"2029\",\"2031\",\"2035\",\"2052\",\"2067\",\"2072\",\"2074\",\"2078\",\"2079\",\"2089\",\"2090\",\"2097\",\"2098\",\"2100\",\"2101\",\"2103\",\"2104\",\"2107\",\"2108\",\"2109\",\"2116\",\"2128\",\"2130\",\"2139\",\"2143\",\"2144\",\"2147\",\"2150\",\"2152\",\"2156\",\"2183\",\"2200\",\"2228\",\"2230\",\"2241\",\"2242\",\"2243\",\"2247\",\"2256\",\"2271\",\"2273\",\"2278\",\"2282\",\"2290\",\"2297\",\"2301\",\"2317\",\"2350\",\"2374\",\"2414\",\"2415\",\"2419\",\"2494\",\"2506\",\"2533\",\"2555\",\"2579\",\"2584\",\"2586\",\"2629\",\"2640\",\"2642\",\"2684\",\"2695\",\"2696\",\"2741\",\"2746\",\"2754\",\"308\",\"344\",\"345\",\"768\",\"770\"]]},true]}}"
+        },
+        {
+            "i": "TR-SK-0008",
             "r": "{\"Identifier\":\"TR-SK-0008\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"If the test type is \\\"RAT\\\" then the \\\"test product and manufacturer\\\" MUST be in the valueset list, if it's NAA return true.\"},{\"lang\":\"sk\",\"desc\":\"Nepovolený výrobca testu.\"}],\"ValidFrom\":\"2022-02-06T13:42:13Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0.ma\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP217198-3\"]},{\"in\":[{\"var\":\"payload.t.0.ma\"},{\"var\":\"external.valueSets.covid-19-lab-test-manufacturer-and-name\"}]},true]}}"
+        },
+        {
+            "i": "TR-SK-0006",
+            "r": "{\"Identifier\":\"TR-SK-0006\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"DateTime of Sample Collection must be less than 72 hours before the Verification Datetime for a test of type NAA (PCR test). After time limit expiration of 72 hours, the test is valid only for the enter of the employee on the working place, or for commuters on the base of the evidence\"},{\"lang\":\"sk\",\"desc\":\"Od odberu vzorky pre test typu NAA (PCR test) ubehlo viac ako 72 hodín. Po uplynutí 72 hodín je test platný IBA PRE VSTUP zamestnanca na pracovisko, alebo pre pendlerov na základe osobitej evidencie.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP6464-4\"]},{\"before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},72,\"hour\"]}]},true]}}"
         },
         {
             "i": "TR-SK-0006",
@@ -982,7 +1006,15 @@
         },
         {
             "i": "TR-SK-0000",
+            "r": "{\"Identifier\":\"TR-SK-0000\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"At most one t-event.\"},{\"lang\":\"sk\",\"desc\":\"QR kód obsahuje viac preukazov o testovaní. Nie je možné ho overiť.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.1\"],\"Logic\":{\"!\":[{\"var\":\"payload.t.1\"}]}}"
+        },
+        {
+            "i": "TR-SK-0000",
             "r": "{\"Identifier\":\"TR-SK-0000\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"At most one t-event.\"},{\"lang\":\"sk\",\"desc\":\"QR kód obsahuje viac preukazov o testovaní. Nie je možné ho overiť.\"}],\"ValidFrom\":\"2022-02-06T13:42:12Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.1\"],\"Logic\":{\"!\":[{\"var\":\"payload.t.1\"}]}}"
+        },
+        {
+            "i": "TR-SK-0001",
+            "r": "{\"Identifier\":\"TR-SK-0001\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The test type must be one of the value set list (RAT OR NAA).\"},{\"lang\":\"sk\",\"desc\":\"Nepovolený typ testu.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"in\":[{\"var\":\"payload.t.0.tt\"},[\"LP217198-3\",\"LP6464-4\"]]},true]}}"
         },
         {
             "i": "TR-SK-0001",
@@ -990,7 +1022,15 @@
         },
         {
             "i": "RR-SK-0002",
+            "r": "{\"Identifier\":\"RR-SK-0002\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Proof of recovery COVID-19 must be no more than 180 days ago.\"},{\"lang\":\"sk\",\"desc\":\"Od prekonania COVID-19 ubehlo viac ako 180 dní.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},180,\"day\"]}]},true]}}"
+        },
+        {
+            "i": "RR-SK-0002",
             "r": "{\"Identifier\":\"RR-SK-0002\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Proof of recovery COVID-19 must be no more than 180 days ago.\"},{\"lang\":\"sk\",\"desc\":\"Od prekonania COVID-19 ubehlo viac ako 180 dní.\"}],\"ValidFrom\":\"2022-02-06T13:42:12Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},180,\"day\"]}]},true]}}"
+        },
+        {
+            "i": "VR-SK-0005",
+            "r": "{\"Identifier\":\"VR-SK-0005\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Does not meet full vaccination criteria. At the moment of check, at least 14 days must have elapsed since the second dose of COVID-19 vaccine was administered. For full vaccination, both, vaccination certificate of the first dose administration and digital certificate of recovery need to be considered.\"},{\"lang\":\"sk\",\"desc\":\"Nevyhovuje podmienke plnej očkovanosti. Od podania druhej dávky očkovacej látky proti ochoreniu COVID-19 neuplynulo najmenej 14 dní. Pre plnú očkovanosť je nutné posúdiť doklad o podaní prvej dávky v kombinácii s dokladom o prekonaní COVID-19.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1525\"]},true,{\"if\":[{\"and\":[{\"===\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"===\":[{\"var\":\"payload.v.0.dn\"},2]}]},{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]}]},true]}]},true]}}"
         },
         {
             "i": "VR-SK-0005",
@@ -998,7 +1038,15 @@
         },
         {
             "i": "VR-SK-0004",
+            "r": "{\"Identifier\":\"VR-SK-0004\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Does not meet full vaccination criteria. At the moment of check, at least 21 and not more than 270 days must have elapsed since a single-shot of COVID-19 vaccine was administered.\"},{\"lang\":\"sk\",\"desc\":\"Nevyhovuje podmienke plnej očkovanosti.  V čase kontroly musí uplynúť najmenej 14 dní, ak bola dávka podaná do 180 dní od prekonania ochorenia COVID-19, alebo najmenej 21 dní a nie viac ako 270 dní od podania prvej dávky očkovacej látky proti ochoreniu COVID-19 s jednodávkovou schémou.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1525\"]},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.dn\"},1]},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},21,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},270,\"day\"]}]},true]},true]},true]}}"
+        },
+        {
+            "i": "VR-SK-0004",
             "r": "{\"Identifier\":\"VR-SK-0004\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Does not meet full vaccination criteria. At the moment of check, at least 21 and not more than 270 days must have elapsed since a single-shot of COVID-19 vaccine was administered.\"},{\"lang\":\"sk\",\"desc\":\"Nevyhovuje podmienke plnej očkovanosti.  V čase kontroly musí uplynúť najmenej 14 dní, ak bola dávka podaná do 180 dní od prekonania ochorenia COVID-19, alebo najmenej 21 dní a nie viac ako 270 dní od podania prvej dávky očkovacej látky proti ochoreniu COVID-19 s jednodávkovou schémou.\"}],\"ValidFrom\":\"2022-02-06T13:42:13Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1525\"]},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.dn\"},1]},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},21,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},270,\"day\"]}]},true]},true]},true]}}"
+        },
+        {
+            "i": "VR-SK-0007",
+            "r": "{\"Identifier\":\"VR-SK-0007\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Verification Datetime must be less than 270 days after vaccination date (and vaccination date not in the future).\"},{\"lang\":\"sk\",\"desc\":\"Nevyhovuje podmienke plnej očkovanosti. Osoba je plne očkovaná proti ochoreniu COVID-19 po aplikácii prvej dávky s jednodávkovou schémou, alebo druhej dávky očkovacej látky s dvojdávkovou schémou, avšak nie viac ako 270 dní po aplikácii poslednej dávky.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1525\"]},true,{\"if\":[{\"and\":[{\"===\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"<=\":[{\"var\":\"payload.v.0.dn\"},2]}]},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},270,\"day\"]}]},true]}]},true]}}"
         },
         {
             "i": "VR-SK-0007",
@@ -1006,7 +1054,15 @@
         },
         {
             "i": "VR-SK-0006",
+            "r": "{\"Identifier\":\"VR-SK-0006\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Does not meet full vaccination criteria. A person is fully vaccinated when at least 14 days and not more than 270 days have elapsed since the first dose of COVID-19 vaccine was administered and the first dose was administered within 180 days since the person had recovered from COVID-19.\"},{\"lang\":\"sk\",\"desc\":\"Nevyhovuje podmienke plnej očkovanosti. Osoba je plne očkovaná najmenej 14 dní po aplikácii prvej dávky očkovacej látky proti ochoreniu COVID-19, ak bola prvá dávka očkovania proti ochoreniu COVID-19 podaná v intervale do 180 dní od prekonania ochorenia COVID-19, avšak nie viac ako 270 dní po aplikácii poslednej dávky.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\">\":[{\"var\":\"payload.v.0.sd\"},1]},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},true]},true]}}"
+        },
+        {
+            "i": "VR-SK-0006",
             "r": "{\"Identifier\":\"VR-SK-0006\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Does not meet full vaccination criteria. A person is fully vaccinated when at least 14 days and not more than 270 days have elapsed since the first dose of COVID-19 vaccine was administered and the first dose was administered within 180 days since the person had recovered from COVID-19.\"},{\"lang\":\"sk\",\"desc\":\"Nevyhovuje podmienke plnej očkovanosti. Osoba je plne očkovaná najmenej 14 dní po aplikácii prvej dávky očkovacej látky proti ochoreniu COVID-19, ak bola prvá dávka očkovania proti ochoreniu COVID-19 podaná v intervale do 180 dní od prekonania ochorenia COVID-19, avšak nie viac ako 270 dní po aplikácii poslednej dávky.\"}],\"ValidFrom\":\"2022-02-06T13:42:13Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\">\":[{\"var\":\"payload.v.0.sd\"},1]},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},true]},true]}}"
+        },
+        {
+            "i": "VR-SK-0001",
+            "r": "{\"Identifier\":\"VR-SK-0001\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only the following vaccines are accepted (EMA or ŠÚKL): AstraZeneca, Biontech, Janssen, Moderna, Sputnik-V, Nuvaxovid.\"},{\"lang\":\"sk\",\"desc\":\"Povolené sú iba vakcíny (EMA alebo ŠÚKL): AstraZeneca, Biontech, Janssen, Moderna, Sputnik-V, Nuvaxovid.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\",\"EU/1/20/1525\",\"Sputnik-V\",\"EU/1/21/1618\",\"EU/1/21/1624\"]]},true]}}"
         },
         {
             "i": "VR-SK-0001",
@@ -1014,7 +1070,15 @@
         },
         {
             "i": "VR-SK-0000",
+            "r": "{\"Identifier\":\"VR-SK-0000\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"At most one v-event.\"},{\"lang\":\"sk\",\"desc\":\"QR kód obsahuje viac preukazov o vakcinácii. Nie je možné ho overiť.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"v.1\"],\"Logic\":{\"!\":[{\"var\":\"payload.v.1\"}]}}"
+        },
+        {
+            "i": "VR-SK-0000",
             "r": "{\"Identifier\":\"VR-SK-0000\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"At most one v-event.\"},{\"lang\":\"sk\",\"desc\":\"QR kód obsahuje viac preukazov o vakcinácii. Nie je možné ho overiť.\"}],\"ValidFrom\":\"2022-02-06T13:42:13Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"v.1\"],\"Logic\":{\"!\":[{\"var\":\"payload.v.1\"}]}}"
+        },
+        {
+            "i": "VR-SK-0002",
+            "r": "{\"Identifier\":\"VR-SK-0002\",\"Type\":\"Acceptance\",\"Country\":\"SK\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.1.0\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Does not meet full vaccination criteria. At the moment of check, at least 14 days must have elapsed since the first dose of COVID-19 vaccine was administered.\"},{\"lang\":\"sk\",\"desc\":\"Nevyhovuje podmienke plnej očkovanosti. V čase kontroly musí uplynúť najmenej 14 dní od podania očkovacej látky.\"}],\"ValidFrom\":\"2023-01-18T17:02:10Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\">=\":[{\"var\":\"payload.v.0.sd\"},1]},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.dn\"},1]},{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]}]},true]},true]},true]}}"
         },
         {
             "i": "VR-SK-0002",
